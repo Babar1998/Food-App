@@ -9,7 +9,7 @@ import '../model/CartProvider.dart';
 import 'location.dart'; // Import your LocationScreen
 
 class CartPage extends StatelessWidget {
-   Map<String, dynamic>? paymentIntent; 
+  Map<String, dynamic>? paymentIntent;
   @override
   Widget build(BuildContext context) {
     final cartProvider = Provider.of<CartProvider>(context);
@@ -105,12 +105,12 @@ class CartPage extends StatelessWidget {
       // Payment Sheet
       await Stripe.instance
           .initPaymentSheet(
-        paymentSheetParameters: SetupPaymentSheetParameters(
-          paymentIntentClientSecret: paymentIntent!['client_secret'],
-          style: ThemeMode.dark,
-          merchantDisplayName: 'Hafeez',
-        ),
-      )
+            paymentSheetParameters: SetupPaymentSheetParameters(
+              paymentIntentClientSecret: paymentIntent!['client_secret'],
+              style: ThemeMode.dark,
+              merchantDisplayName: 'Hafeez',
+            ),
+          )
           .then((value) {});
 
       /// Now finally display payment sheet
@@ -142,7 +142,7 @@ class CartPage extends StatelessWidget {
             ),
           ),
         );
-         
+
         paymentIntent = null;
       }).onError((error, stackTrace) {
         print('Error is:--->$error $stackTrace');
@@ -172,8 +172,8 @@ class CartPage extends StatelessWidget {
       var response = await http.post(
         Uri.parse('https://api.stripe.com/v1/payment_intents'),
         headers: {
-          'Authorization':
-              'Bearer ${Your API}',
+          'Authorization': 'Bearer ',
+          // ${Your API}
           'Content-Type': 'application/x-www-form-urlencoded'
         },
         body: body,

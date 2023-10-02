@@ -29,7 +29,8 @@ class CustomTextField extends StatelessWidget {
             borderRadius: BorderRadius.circular(40),
           ),
           margin: EdgeInsets.all(10),
-          child: TextFormField( // Use TextFormField instead of TextField
+          child: TextFormField(
+            // Use TextFormField instead of TextField
             controller: controller,
             onChanged: onChanged,
             obscureText: obscureText,

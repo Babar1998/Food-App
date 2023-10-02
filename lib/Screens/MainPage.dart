@@ -126,7 +126,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
         borderRadius: BorderRadius.vertical(
             bottom: Radius.circular(20)), // Set the border radius
       ),
-      height: 140,
+      height: 170,
       padding: const EdgeInsets.symmetric(horizontal: 16),
       child: Column(
         children: [
